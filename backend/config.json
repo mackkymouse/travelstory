@@ -1,0 +1,3 @@
+{
+   "connectionString": "mongodb+srv://macdev:macdev@travelstory.lvfpz.mongodb.net/?retryWrites=true&w=majority&appName=travelstory"
+}

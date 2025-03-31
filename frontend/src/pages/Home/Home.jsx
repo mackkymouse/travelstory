@@ -24,7 +24,7 @@ const Home = () => {
    const [searchQuery, setSearchQuery] = useState("");
    const [filterType, setFilterType] = useState("");
 
-   const [dateRange, setDateRange] = useState({ form: null, to: null });
+   const [dateRange, setDateRange] = useState({ from: null, to: null });
 
    const [openAddEditModal, setOpenAddEditModal] = useState({
       isShown: false,
@@ -151,8 +151,8 @@ const Home = () => {
    // Handle Filter Travel Story By Date Range
    const filterStoriesByDate = async (day) => {
       try {
-         const startDate = day.from ? moment(day.from).valueOf() : null;
-         const endDate = day.to ? moment(day.to).valueOf() : null;
+         const startDate = day.from ? new Date(day.from).toISOString() : null;
+         const endDate = day.to ? new Date(day.to).toISOString() : null;
 
          if (startDate && endDate) {
             const response = await axiosInstance.get("/travel-stories/filter", {
